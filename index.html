@@ -153,6 +153,12 @@
         img.style.left="20px"
         b.appendChild(imgd);
         imgd.style.margin="0";
+        document.querySelector("input").addEventListner("keypress",function(event){
+            if(event.keycode==13)
+            {
+                calculate();
+            
+        })
 
     }
 </script>
