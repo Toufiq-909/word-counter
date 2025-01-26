@@ -9,149 +9,152 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=DynaPuff:wght@400..700&family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
     <link rel="icon" type="image?x-icon" href="https://cdn.iconscout.com/icon/premium/png-256-thumb/word-count-wordcountchecker-file-35737.png?f=webp&w=256">
-<style>
-    body
-    {
-        background-color:#F72C5B;
-    }
-    p
-    {
-        font-family:DynaPuff;
-        font-weight:bold;
-        color:#FFFBE6;
-        font-size:36px;
-        text-align:center;
-        margin-top:50px;
-    }
-    div
-    {
-        width:500px;
-        height:200px;
-        margin-left:500px;
-        margin-top:100px;
-    }
-    input
-    {
-        width:500px;
-        height:200px;
-        background-color:#91BD3A;
-        color:white;
-        font-weight:bold;
-        font-family:DynaPuff;
-        text-align:center;
-        font-size:28px;
-        border:1px solid #91BD3A;
-        border-radius:40px;
-        outline:none;
-    }
-    input:hover,button:hover
-    {
-        border:3px solid #D8E9A8
-    }
-    button
-    {
-        position:relative;
-        margin-left:1079px;
-        margin-top:50px;
-        bottom:158px;
-        width:140px;
-        height:60px;
-        background-color:#91BD3A;
-        border-radius:40px;
-        border:1px solid #91BD3A;
-        font-family:DynaPuff;
-        font-weight:bolder;
-        color:white;
-        font-size:22px
-    }
-    button:hover
-    {
-        cursor:pointer;
-    }
-    input::placeholder
-    {
-        color:#ffffff;
-        font-weight:bolder
+    <style>
+        body
+        {
+            background-color:#F72C5B;
+        }
+        p
+        {
+            font-family:DynaPuff;
+            font-weight:bold;
+            color:#FFFBE6;
+            font-size:36px;
+            text-align:center;
+            margin-top:50px;
+        }
+        div
+        {
+            width:500px;
+            height:200px;
+            margin-left:500px;
+            margin-top:100px;
+        }
+        input
+        {
+            width:500px;
+            height:200px;
+            background-color:#91BD3A;
+            color:white;
+            font-weight:bold;
+            font-family:DynaPuff;
+            text-align:center;
+            font-size:28px;
+            border:1px solid #91BD3A;
+            border-radius:40px;
+            outline:none;
+        }
+        input:hover,button:hover
+        {
+            border:3px solid #D8E9A8
+        }
+        button
+        {
+            position:relative;
+            margin-left:1079px;
+            margin-top:50px;
+            bottom:158px;
+            width:140px;
+            height:60px;
+            background-color:#91BD3A;
+            border-radius:40px;
+            border:1px solid #91BD3A;
+            font-family:DynaPuff;
+            font-weight:bolder;
+            color:white;
+            font-size:22px
+        }
+        button:hover
+        {
+            cursor:pointer;
+        }
+        input::placeholder
+        {
+            color:#ffffff;
+            font-weight:bolder
 
-    }
+        }
 
-</style>
+    </style>
 </head>
 <body>
 <p>Hi there! Let's find out how many words are in your paragraph!</p>
 <div>
-<input type="text" placeholder="Paste the Paragrah!">
+    <input type="text" placeholder="Paste the Paragrah!">
 </div>
 <button onclick="calculate()">submit</button>
 <script>
-   function calculate(){
-       let contents=document.querySelector("input").value;
-       let count=0;
-       let cc="";
-       for(let i=0;i<contents.length;i++)
-       {
-           if(contents[i].charCodeAt(0)!=34&&contents[i].charCodeAt(0)!=39)
-           {
-               cc=cc+contents[i];
-           }
-       }
-       contents=cc;
-       for(let i=0;i<contents.length;i++)
-       {
-           console.log("inside");
-           if(contents[i].charCodeAt(0)==46||contents[i].charCodeAt(0)==32||contents[i].charCodeAt(0)==44)
-           {
-               if(i!=0&&contents[i-1].charCodeAt(0)!=46&&contents[i-1].charCodeAt(0)!=32&&contents[i-1].charCodeAt(0)!=44&&i+1!=contents.length)
-               {
-                   count++;
-                   console.log("count"+count);
-                   console.log("characer"+contents[i]+"abc");
-               }
-           }
-       }
-       let b=document.querySelector("body");
-       b.style.background="#F72C5B";
-       b.style.margin="0";
-       let img=document.createElement("img")
-       img.style.height="415px"
-       img.style.width="289px";
-       img.src='jpg';
-       let imgd=document.createElement("div");
-       imgd.style.height="100vh";
-       imgd.style.width="100vw";
-       let text=document.createElement("p");
-       text.innerHTML="hi there";
-       imgd.appendChild(img);
-       imgd.appendChild(text);
-       b.innerHTML="";
-       let ko;
-       if(contents!=""&&count==0)
-       {
-           ko="1";
-           console.log(1);
-       }
-       else if(contents=="")
-       {
-           ko="0";
-           console.log(0);
-       }
-       else
-       {
-           ko=count+1;
-           console.log(count+1);
-       }
-       text.innerHTML="Your paragraph has "+ko+" words. Hope it meets your goals!";
-       text.style.display="inline";
-       text.style.position="relative";
-       text.style.bottom="300px"
-       text.style.left="90px"
-       img.style.position="relative";
-       img.style.top="60px";
-       img.style.left="20px"
-       b.appendChild(imgd);
-       imgd.style.margin="0";
+    function calculate(){
+        let contents=document.querySelector("input").value;
+        let count=0;
+        let cc="";
+        for(let i=0;i<contents.length;i++)
+        {
+            if(contents[i].charCodeAt(0)!=34&&contents[i].charCodeAt(0)!=39)
+            {
+                cc=cc+contents[i];
+            }
+        }
+        contents=cc;
+        for(let i=0;i<contents.length;i++)
+        {
+            console.log("inside");
+            if(contents[i].charCodeAt(0)==46||contents[i].charCodeAt(0)==32||contents[i].charCodeAt(0)==44)
+            {
+                if(i!=0&&contents[i-1].charCodeAt(0)!=46&&contents[i-1].charCodeAt(0)!=32&&contents[i-1].charCodeAt(0)!=44&&i+1!=contents.length)
+                {
+                    count++;
 
-   }
+                }
+            }
+        }
+        let an=document.createElement("a");
+        an.href="https://word-counter909.vercel.app/";
+
+        let b=document.querySelector("body");
+        b.style.background="#F72C5B";
+        b.style.margin="0";
+        let img=document.createElement("img")
+        img.style.height="415px"
+        img.style.width="289px";
+        img.src='jpg';
+        let imgd=document.createElement("div");
+        imgd.style.height="100vh";
+        imgd.style.width="100vw";
+        let text=document.createElement("p");
+        text.innerHTML="hi there";
+        an.appendChild(img);
+        imgd.appendChild(an);
+        imgd.appendChild(text);
+        b.innerHTML="";
+        let ko;
+        if(contents!=""&&count==0)
+        {
+            ko="1";
+            console.log(1);
+        }
+        else if(contents=="")
+        {
+            ko="0";
+            console.log(0);
+        }
+        else
+        {
+            ko=count+1;
+            console.log(count+1);
+        }
+        text.innerHTML="Your paragraph has "+ko+" words. Hope it meets your goals!";
+        text.style.display="inline";
+        text.style.position="relative";
+        text.style.bottom="300px"
+        text.style.left="90px"
+        img.style.position="relative";
+        img.style.top="60px";
+        img.style.left="20px"
+        b.appendChild(imgd);
+        imgd.style.margin="0";
+
+    }
 </script>
 </body>
 
